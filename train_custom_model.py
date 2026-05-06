@@ -51,7 +51,7 @@ def evaluate_model(y_true, y_prob, name="Custom Model"):
     print("===========================================\n")
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Train the custom PAN 2025 N-gram detector.")
+    parser = argparse.ArgumentParser(description="Train the custom PAN 2026 N-gram detector.")
     parser.add_argument("--train", default="data/train.jsonl", help="Training JSONL path.")
     parser.add_argument("--val", default="data/val.jsonl", help="Validation JSONL path.")
     parser.add_argument(

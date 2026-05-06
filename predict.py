@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PAN 2025 Subtask 1 inference entrypoint.
+"""PAN 2026 Subtask 1 inference entrypoint.
 
 Usage expected by TIRA/PAN:
     python3 predict.py /absolute/path/to/dataset.jsonl /absolute/path/to/output_dir
@@ -30,7 +30,7 @@ DEFAULT_OUTFILE = "prediction.jsonl"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="PAN 2025 Subtask 1 AI-authorship detector."
+        description="PAN 2026 Subtask 1 AI-authorship detector."
     )
     parser.add_argument("input_file", help="Path to input dataset.jsonl")
     parser.add_argument("output_dir", help="Directory where prediction JSONL is written")

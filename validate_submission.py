@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate PAN 2025 Subtask 1 prediction JSONL format."""
+"""Validate PAN 2026 Subtask 1 prediction JSONL format."""
 
 from __future__ import annotations
 
