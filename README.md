@@ -58,7 +58,7 @@ Dry run:
 tira-cli code-submission --dry-run \
   --path . \
   --task generative-ai-authorship-verification-panclef-2026 \
-  --dataset DATASET_ID_FROM_TIRA \
+  --dataset generative-ai-authorship-verification-panclef-2026/pan26-generative-ai-detection-smoke-test-20260330-training \
   --command 'python3 /app/predict.py $inputDataset/dataset.jsonl $outputDir'
 ```
 
@@ -68,7 +68,7 @@ Submit:
 tira-cli code-submission \
   --path . \
   --task generative-ai-authorship-verification-panclef-2026 \
-  --dataset DATASET_ID_FROM_TIRA \
+  --dataset generative-ai-authorship-verification-panclef-2026/pan26-generative-ai-detection-smoke-test-20260330-training \
   --command 'python3 /app/predict.py $inputDataset/dataset.jsonl $outputDir'
 ```
 
@@ -77,3 +77,19 @@ tira-cli code-submission \
 The DeBERTa `model.safetensors` file is tracked with Git LFS. Run
 `git lfs pull` after cloning if the model file is missing or appears as a small
 pointer file.
+
+## GitHub Actions Upload
+
+The repository includes a manual workflow at
+`.github/workflows/upload-software-to-tira.yml`.
+
+To use it:
+
+1. In GitHub, open `Settings` -> `Secrets and variables` -> `Actions`.
+2. Add a repository secret named `TIRA_CLIENT_TOKEN`.
+3. Paste the token from the TIRA submit page.
+4. Open `Actions` -> `Upload Software to TIRA`.
+5. Click `Run workflow` and keep `directory` as `.`.
+
+The workflow checks out Git LFS files, installs the TIRA client, logs in, and
+uploads the root Docker submission to the PAN 2026 task.
